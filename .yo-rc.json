@@ -37,10 +37,12 @@
     "clientTheme": "cosmo",
     "clientThemeVariant": "dark",
     "enableTranslation": true,
-    "nativeLanguage": "es",
+    "nativeLanguage": "en",
     "packageFolder": "com/hgdiv/crm",
     "rememberMeKey": "0adea88c2b0973a97c5c53e6e35c6a55dda572f890164a90dbd84d1f06699038094b584c76b6343e40aedb571a60e393234a",
     "clientPackageManager": "npm",
-    "languages": ["es", "en"]
+    "languages": ["en", "es"],
+    "entities": ["Contact", "Persona", "ContactCategory", "SalesRep", "Company"],
+    "lastLiquibaseTimestamp": 1620093273000
   }
 }

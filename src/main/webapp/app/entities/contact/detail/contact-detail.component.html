@@ -1,0 +1,100 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="contact">
+      <h2 data-cy="contactDetailsHeading"><span jhiTranslate="fineCrmApp.contact.detail.title">Contact</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ contact.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ contact.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ contact.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.email">Email</span></dt>
+        <dd>
+          <span>{{ contact.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ contact.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.linkedInProfile">Linked In Profile</span></dt>
+        <dd>
+          <span>{{ contact.linkedInProfile }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.mailingAddress">Mailing Address</span></dt>
+        <dd>
+          <span>{{ contact.mailingAddress }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.connectDate">Connect Date</span></dt>
+        <dd>
+          <span>{{ contact.connectDate | formatMediumDate }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.jobTitle">Job Title</span></dt>
+        <dd>
+          <span>{{ contact.jobTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.language">Language</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'fineCrmApp.Language.' + contact.language }}">{{ contact.language }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.vip">Vip</span></dt>
+        <dd>
+          <span>{{ contact.vip }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.affiliate">Affiliate</span></dt>
+        <dd>
+          <span>{{ contact.affiliate }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.zipCode">Zip Code</span></dt>
+        <dd>
+          <span>{{ contact.zipCode }}</span>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.contactCategory">Contact Category</span></dt>
+        <dd>
+          <div *ngIf="contact.contactCategory">
+            <a [routerLink]="['/contact-category', contact.contactCategory?.id, 'view']">{{ contact.contactCategory?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.persona">Persona</span></dt>
+        <dd>
+          <div *ngIf="contact.persona">
+            <a [routerLink]="['/persona', contact.persona?.id, 'view']">{{ contact.persona?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.salesRep">Sales Rep</span></dt>
+        <dd>
+          <div *ngIf="contact.salesRep">
+            <a [routerLink]="['/sales-rep', contact.salesRep?.id, 'view']">{{ contact.salesRep?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="fineCrmApp.contact.company">Company</span></dt>
+        <dd>
+          <div *ngIf="contact.company">
+            <a [routerLink]="['/company', contact.company?.id, 'view']">{{ contact.company?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/contact', contact.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

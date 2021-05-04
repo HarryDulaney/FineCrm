@@ -1,0 +1,25 @@
+{
+  "fineCrmApp": {
+    "contactCategory": {
+      "home": {
+        "title": "Contact Categories",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Contact Category",
+        "createOrEditLabel": "Crear o editar Contact Category",
+        "notFound": "Ningún Contact Categories encontrado"
+      },
+      "created": "Un nuevo Contact Category ha sido creado con el identificador {{ param }}",
+      "updated": "Un Contact Category ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Contact Category ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Contact Category {{ id }}?"
+      },
+      "detail": {
+        "title": "Contact Category"
+      },
+      "id": "ID",
+      "categoryName": "Category Name",
+      "contact": "Contact"
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "fineCrmApp": {
+    "salesRep": {
+      "home": {
+        "title": "Sales Reps",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sales Rep",
+        "createOrEditLabel": "Create or edit a Sales Rep",
+        "notFound": "No Sales Reps found"
+      },
+      "created": "A new Sales Rep is created with identifier {{ param }}",
+      "updated": "A Sales Rep is updated with identifier {{ param }}",
+      "deleted": "A Sales Rep is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sales Rep {{ id }}?"
+      },
+      "detail": {
+        "title": "Sales Rep"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "generatedRevenue": "Generated Revenue",
+      "commissionOwed": "Commission Owed",
+      "startDate": "Start Date",
+      "region": "Region",
+      "contact": "Contact"
+    }
+  }
+}

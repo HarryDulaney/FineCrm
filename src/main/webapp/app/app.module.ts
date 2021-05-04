@@ -55,7 +55,7 @@ import { ErrorComponent } from './layouts/error/error.component';
   ],
   providers: [
     Title,
-    { provide: LOCALE_ID, useValue: 'es' },
+    { provide: LOCALE_ID, useValue: 'en' },
     { provide: NgbDateAdapter, useClass: NgbDateDayjsAdapter },
     httpInterceptorProviders,
   ],
@@ -73,7 +73,7 @@ export class AppModule {
     registerLocaleData(locale);
     iconLibrary.addIcons(...fontAwesomeIcons);
     dpConfig.minDate = { year: dayjs().subtract(100, 'year').year(), month: 1, day: 1 };
-    translateService.setDefaultLang('es');
-    translateService.use('es');
+    translateService.setDefaultLang('en');
+    translateService.use('en');
   }
 }

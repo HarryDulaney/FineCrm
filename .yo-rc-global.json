@@ -2,7 +2,7 @@
   "generator-jhipster:7.0.1": {
     "promptValues": {
       "packageName": "com.hgdiv.crm",
-      "nativeLanguage": "es"
+      "nativeLanguage": "en"
     }
   }
 }

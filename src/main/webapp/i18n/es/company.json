@@ -1,0 +1,27 @@
+{
+  "fineCrmApp": {
+    "company": {
+      "home": {
+        "title": "Companies",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Company",
+        "createOrEditLabel": "Crear o editar Company",
+        "notFound": "Ningún Companies encontrado"
+      },
+      "created": "Un nuevo Company ha sido creado con el identificador {{ param }}",
+      "updated": "Un Company ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Company ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Company {{ id }}?"
+      },
+      "detail": {
+        "title": "Company"
+      },
+      "id": "ID",
+      "companyName": "Company Name",
+      "address": "Address",
+      "primaryContact": "Primary Contact",
+      "contact": "Contact"
+    }
+  }
+}

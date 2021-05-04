@@ -1,0 +1,90 @@
+<div>
+  <h2 id="page-heading" data-cy="SalesRepHeading">
+    <span jhiTranslate="fineCrmApp.salesRep.home.title">Sales Reps</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="fineCrmApp.salesRep.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-sales-rep"
+        [routerLink]="['/sales-rep/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="fineCrmApp.salesRep.home.createLabel"> Create a new Sales Rep </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="salesReps?.length === 0">
+    <span jhiTranslate="fineCrmApp.salesRep.home.notFound">No salesReps found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="salesReps && salesReps.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="fineCrmApp.salesRep.firstName">First Name</span></th>
+          <th scope="col"><span jhiTranslate="fineCrmApp.salesRep.lastName">Last Name</span></th>
+          <th scope="col"><span jhiTranslate="fineCrmApp.salesRep.email">Email</span></th>
+          <th scope="col"><span jhiTranslate="fineCrmApp.salesRep.generatedRevenue">Generated Revenue</span></th>
+          <th scope="col"><span jhiTranslate="fineCrmApp.salesRep.commissionOwed">Commission Owed</span></th>
+          <th scope="col"><span jhiTranslate="fineCrmApp.salesRep.startDate">Start Date</span></th>
+          <th scope="col"><span jhiTranslate="fineCrmApp.salesRep.region">Region</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let salesRep of salesReps; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/sales-rep', salesRep.id, 'view']">{{ salesRep.id }}</a>
+          </td>
+          <td>{{ salesRep.firstName }}</td>
+          <td>{{ salesRep.lastName }}</td>
+          <td>{{ salesRep.email }}</td>
+          <td>{{ salesRep.generatedRevenue }}</td>
+          <td>{{ salesRep.commissionOwed }}</td>
+          <td>{{ salesRep.startDate | formatMediumDate }}</td>
+          <td>{{ salesRep.region }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/sales-rep', salesRep.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/sales-rep', salesRep.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(salesRep)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
