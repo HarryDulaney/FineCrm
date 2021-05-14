@@ -2,6 +2,8 @@ package com.hgdiv.crm.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -23,9 +25,9 @@ public class ContactCategory implements Serializable {
     @Column(name = "category_name", nullable = false)
     private String categoryName;
 
+    @OneToMany(mappedBy = "contactCategory")
     @JsonIgnoreProperties(value = { "contactCategory", "persona", "salesRep", "company" }, allowSetters = true)
-    @OneToOne(mappedBy = "contactCategory")
-    private Contact contact;
+    private Set<Contact> contacts = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -54,23 +56,13 @@ public class ContactCategory implements Serializable {
         this.categoryName = categoryName;
     }
 
-    public Contact getContact() {
-        return this.contact;
+    public Set<Contact> getContacts() {
+        return contacts;
     }
 
-    public ContactCategory contact(Contact contact) {
-        this.setContact(contact);
+    public ContactCategory setContacts(Set<Contact> contacts) {
+        this.contacts = contacts;
         return this;
-    }
-
-    public void setContact(Contact contact) {
-        if (this.contact != null) {
-            this.contact.setContactCategory(null);
-        }
-        if (contact != null) {
-            contact.setContactCategory(this);
-        }
-        this.contact = contact;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 import { SessionStorageService } from 'ngx-webstorage';
 
 import { VERSION } from 'app/app.constants';
@@ -23,7 +22,6 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private loginService: LoginService,
-    private translateService: TranslateService,
     private sessionStorage: SessionStorageService,
     private accountService: AccountService,
     private profileService: ProfileService,
@@ -39,11 +37,6 @@ export class NavbarComponent implements OnInit {
       this.inProduction = profileInfo.inProduction;
       this.openAPIEnabled = profileInfo.openAPIEnabled;
     });
-  }
-
-  changeLanguage(languageKey: string): void {
-    this.sessionStorage.store('locale', languageKey);
-    this.translateService.use(languageKey);
   }
 
   collapseNavbar(): void {

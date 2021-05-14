@@ -6,7 +6,7 @@
       "home": "Inicio",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entidades",
+        "main": "Entidades de Negocios",
         "contact": "Contact",
         "persona": "Persona",
         "contactCategory": "Contact Category",
@@ -141,5 +141,8 @@
       "not.image": "Se esperaba que el fichero fuera una imagen pero se encontro \"{{ fileType }}\""
     }
   },
-  "footer": "Pie de página"
+  "footer": {
+    "link.bugreport": "Reportar un error",
+    "link.dev.portal": "Portal para desarrolladores"
+  }
 }

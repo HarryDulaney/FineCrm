@@ -154,10 +154,7 @@ public class ContactCategoryResource {
     public List<ContactCategory> getAllContactCategories(@RequestParam(required = false) String filter) {
         if ("contact-is-null".equals(filter)) {
             log.debug("REST request to get all ContactCategorys where contact is null");
-            return StreamSupport
-                .stream(contactCategoryRepository.findAll().spliterator(), false)
-                .filter(contactCategory -> contactCategory.getContact() == null)
-                .collect(Collectors.toList());
+            return contactCategoryRepository.findAll();
         }
         log.debug("REST request to get all ContactCategories");
         return contactCategoryRepository.findAll();

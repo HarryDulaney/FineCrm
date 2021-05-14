@@ -63,9 +63,8 @@ public class Contact implements Serializable {
     @Column(name = "zip_code")
     private Integer zipCode;
 
+    @ManyToOne
     @JsonIgnoreProperties(value = { "contact" }, allowSetters = true)
-    @OneToOne
-    @JoinColumn(unique = true)
     private ContactCategory contactCategory;
 
     @JsonIgnoreProperties(value = { "contact" }, allowSetters = true)

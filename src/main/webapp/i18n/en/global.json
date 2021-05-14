@@ -6,7 +6,7 @@
       "home": "Home",
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
-        "main": "Entities",
+        "main": "Business Entities",
         "contact": "Contact",
         "persona": "Persona",
         "contactCategory": "Contact Category",
@@ -51,14 +51,12 @@
     },
     "messages": {
       "info": {
-        "authenticated": {
-          "prefix": "If you want to ",
-          "link": "sign in",
-          "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
+        "login": {
+          "link": "Sign in to manage your account"
         },
         "register": {
-          "noaccount": "You don't have an account yet?",
-          "link": "Register a new account"
+          "noaccount": "Don't have an account yet?",
+          "link": "Register a new account here"
         }
       },
       "error": {
@@ -142,5 +140,8 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "This is your footer"
+  "footer": {
+    "link.bugreport": "Report A Bug",
+    "link.dev.portal": "Developer Portal"
+  }
 }
